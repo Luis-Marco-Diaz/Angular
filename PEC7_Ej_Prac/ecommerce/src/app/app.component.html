@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="divHeader">
+      <h1>
+        E-Commerce Espacial
+      </h1>
+    </div>
+    <app-navbar (showArticleListEvent)="toggleShowArticleList()" (showArticleNewTemplateEvent)="toggleShowNewTemplate()"
+      (showArticleNewReactiveEvent)="toggleShowNewReactive()"></app-navbar>
+
+  </header>
+
+  <app-article-list *ngIf="showArticleList"></app-article-list>
+  <app-article-new-template *ngIf="showNewArticleTemplate"></app-article-new-template>
+  <app-article-new-reactive *ngIf="showNewArticleReactive"></app-article-new-reactive>
+</body>
+
+
+
+<footer class="footer">
+  <div class="divFooter container-sm">
+    <div class="divFooterItems">
+      <h3>Nicolas Moncada</h3>
+      <p>Download the app by clicking the link below</p>
+      <p><button>Google Play</button> <button>App Store</button></p>
+    </div>
+    <div class="divFooterItems">
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+    </div>
+    <div class="divFooterItems">
+      <h3>Service</h3>
+      <ul>
+        <li><a href="#"> Astronautas</a></li>
+        <li><a href="#"> Nicolas Moncada</a></li>
+      </ul>
+    </div>
+    <div class="divFooterItems">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+34567432546"> +34 567 432
+            546 </a></li>
+        <li><a href="mailto:Ecommerce@gmail.com">
+            Ecommerce@gmail.com </a></li>
+        <li> Boulevard de Grancy
+          29<br>1006
+          Laussane</li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+
+</html>

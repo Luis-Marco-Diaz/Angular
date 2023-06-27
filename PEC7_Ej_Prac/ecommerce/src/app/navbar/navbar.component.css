@@ -1,0 +1,33 @@
+li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+li:hover {
+    color: red;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 10px 10px 20px black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.6s;
+}
+
+nav  {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (min-width:990px) {
+    ul {
+        width: 30%;
+        
+    }
+}

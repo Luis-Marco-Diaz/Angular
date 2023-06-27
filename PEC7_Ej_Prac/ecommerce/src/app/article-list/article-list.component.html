@@ -1,0 +1,32 @@
+<h2>Lista de los más vendidos del 2023!<br><i style="color: #5180d0; font-size: 2rem;">(PEC4: Ejercicio 7)</i></h2>
+<div>
+  <input type="text" placeholder="Buscar por nombre" #searchInput (input)="filterArticles(searchInput.value)">
+
+<!-- AQUÍ SE COMENTA LA PARTE CORRESPONDIENTE DE LA PEC ANTERIOR PARA QUE SOLO SE VEAN LOS PORDUCTOS DE LA API Y LOS MANUALES DEL FORM. REACTIVO 
+  <ul>
+    <li *ngFor="let article of arrayArticle">
+      {{ article.name }}
+      <app-article-item></app-article-item><br>
+      {{ article.isOnSale ? 'Disponible' : 'No disponible' }}
+    </li>
+  </ul>
+-->
+
+  <ul *ngFor="let article of (articles$ | async)">
+    <li>
+      <img [src]="article.imageUrl | defaultImage" alt="{{ article.name }}" width="150" height="150"><br>
+      {{ article.name }}<br>
+      {{ article.price | currency:'EUR':'symbol':'1.2-2' }}<br>
+      {{ article.isOnSale ? 'Disponible' : 'No disponible' }}<br>
+      <button (click)="changeQuantity(article, -1)">-</button>
+
+      <span>{{ article.quantityInCart }}</span>
+      <button (click)="changeQuantity(article, 1)">+</button>
+    </li>
+    <!-- PARA PROBAR LO DE LA IMAGEN POR DEFECTO, Funciona
+    <li>
+      <div class="image"><img [src]="article.imageUrl | defaultImage"></div>
+    </li>-->
+  </ul>
+
+</div>

@@ -1,0 +1,26 @@
+  .article-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  .article-item .details {
+    text-align: center;
+  }
+  
+  .article-item.sale {
+    background-color: cornflowerblue;
+  }
+
+  img {
+    max-width: 200px;
+  }
+
+  .gray-price {
+    color: gray;
+  }
+
+ 
+
+  

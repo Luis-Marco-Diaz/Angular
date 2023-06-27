@@ -1,0 +1,15 @@
+<h2>En oferta hoy! <i>(PEC4: Ejercicio 3 y 5)</i></h2>
+<div class="article-item" [class]="article.isOnSale ? 'article-item sale' : ''">
+  <div class="image"><img [src]="article.imageUrl"></div>
+  <div class="details">
+    <div>{{article.name}}</div>
+
+    <div [ngClass]="{ 'gray-price': !article.isOnSale }"> {{article.price | currency:'EUR':'symbol':'1.2-2'}}</div>
+
+    <div *ngIf="article.isOnSale">
+      <button [disabled]="article.quantityInCart == 0" (click)="decrementInCart()">-</button>
+      <span>{{article.quantityInCart}}</span>
+      <button (click)="incrementInCart()">+</button>
+    </div>
+  </div>
+</div>
